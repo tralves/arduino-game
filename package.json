@@ -1,0 +1,29 @@
+{
+  "name": "arduino-game",
+  "version": "1.0.0",
+  "description": "A basic click contest.",
+  "main": "index.js",
+  "dependencies": {
+    "johnny-five": "^0.11.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tralves/arduino-game.git"
+  },
+  "keywords": [
+    "arduino",
+    "game",
+    "socket.io",
+    "vuejs"
+  ],
+  "author": "Tiago Alves <tralves@gmail.com> (http://tiagoalves.co)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tralves/arduino-game/issues"
+  },
+  "homepage": "https://github.com/tralves/arduino-game#readme"
+}

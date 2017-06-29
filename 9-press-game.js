@@ -10,6 +10,8 @@ board.on("ready", function() {
   const teamWhiteLed = new five.Led(5);
   const teamBlackLed = new five.Led(6);
 
+  const pointer = new five.Servo({pin: 10, center: true});
+
   let teamWhiteScore = 0;
   let teamBlackScore = 0;
 
@@ -31,6 +33,7 @@ board.on("ready", function() {
   }
 
   function showScore() {
+    pointer.to(teamWhiteScore - teamBlackScore + 90);
     console.log(`WHITE ${teamWhiteScore} - ${teamBlackScore} BLACK`);
   }
 
