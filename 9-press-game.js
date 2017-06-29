@@ -7,6 +7,9 @@ board.on("ready", function() {
   const teamWhiteButton = new five.Button(2);
   const teamBlackButton = new five.Button(3);
 
+  const teamWhiteLed = new five.Led(5);
+  const teamBlackLed = new five.Led(6);
+
   let teamWhiteScore = 0;
   let teamBlackScore = 0;
 
@@ -15,11 +18,15 @@ board.on("ready", function() {
 
   function addPointToTeamWhite() {
     teamWhiteScore++;
+    teamWhiteLed.on(50);
+    board.wait(50, () => {teamWhiteLed.stop().off()})
     showScore();
   }
 
   function addPointToTeamBlack() {
     teamBlackScore++;
+    teamBlackLed.on(50);
+    board.wait(50, () => {teamBlackLed.stop().off()})
     showScore();
   }
 
