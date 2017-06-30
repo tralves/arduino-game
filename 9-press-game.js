@@ -15,6 +15,23 @@ board.on("ready", function() {
   let teamWhiteScore = 0;
   let teamBlackScore = 0;
 
+  var io = require('socket.io')();
+  var middleware = require('socketio-wildcard')();
+
+  io.use(middleware);
+
+  io.on('connection', function(socket){
+    console.log('socket connected!');
+    socket.on('clickWhite', addPointToTeamWhite);
+    socket.on('clickBlack', addPointToTeamBlack);
+
+    socket.on('*', function(packet){
+      console.log(packet.data);
+    });
+
+  });
+  io.listen(9000);
+
   teamWhiteButton.on('down', addPointToTeamWhite );
   teamBlackButton.on('down', addPointToTeamBlack );
 
