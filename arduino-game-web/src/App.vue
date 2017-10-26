@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted: function() {
-    this.socket = io("192.168.1.10" + ':' + 9000);
+    this.socket = io("192.168.43.155" + ':' + 9000);
     this.socket.on('connect', () => {
       console.log('Connected! ' + this.connected);
       this.connected = true;
