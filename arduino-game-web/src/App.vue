@@ -1,12 +1,14 @@
 <template>
   <div id="app" :class="{ connected: connected }">
-    <button class="white" @click="addPointToTeamWhite()">WHITE</button>
     <div class="versus">
       <img id="img-1" src="./assets/logo.png">
       <img id="img-2" src="./assets/logo.png">
       <img id="img-3" src="./assets/logo.png">
     </div>
-    <button class="black" @click="addPointToTeamBlack()">BLACK</button>
+    <div class="buttons">
+      <button class="white" @click="addPointToTeamWhite()">WHITE</button>
+      <button class="black" @click="addPointToTeamBlack()">BLACK</button>
+    </div>
   </div>
 </template>
 
@@ -60,7 +62,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,13 +81,20 @@ body {
   }
 }
 
+.buttons {
+  position: absolute;
+  min-height: 300px;
+  top: 340px;
+}
+
 button {
-  width: 200px;
+  width: 130px;
   height: 100px;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 35px;
   border-radius: 5px;
   border: none;
+  margin: 0 10px;
 
   &.black {
     background-color: white;
@@ -99,9 +107,10 @@ button {
 }
 
 .versus {
-  position: relative;
+  position: absolute;
   width: 300px;
   min-height: 300px;
+  top: 20px;
 
   img {
     display: block;
